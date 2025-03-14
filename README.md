@@ -21,7 +21,7 @@ FRIO blog postavený na **Next.js 15.2.2**. Zobrazuje články, umožňuje detai
 ## Inštalácia a spustenie
 
 ```bash
-git clone https://github.com/crookedr/frio-blog.git
-cd frio-blog
+git clone https://github.com/crookedr/frioblog.git
+cd frioblog
 npm install
 npm run dev
