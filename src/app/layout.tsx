@@ -21,7 +21,7 @@ export const metadata = {
   description: "Jednoduchý blog v Next.js 13",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: ReactNode;
