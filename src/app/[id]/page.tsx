@@ -14,15 +14,15 @@ interface BlogDetailPageProps {
   };
 }
 
-export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const { id } = params;
+async function getBlog(id: string): Promise<Blog | undefined> {
   const res = await fetch("https://jsonfakery.com/blogs");
   const blogs: Blog[] = await res.json();
+  return blogs.find((b) => b.id === id);
+}
 
-  const blog = blogs.find((b) => b.id === id);
-  if (!blog) {
-    notFound();
-  }
+export default async function Page({ params }: BlogDetailPageProps) {
+  const blog = await getBlog(params.id);
+  if (!blog) notFound();
 
   return (
     <>
